@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - SecureShield</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+      })();
+    </script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      .glow-primary {
+        filter: drop-shadow(0 0 8px rgba(47, 129, 247, 0.6));
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(47, 129, 247, 0.1);
+      }
+      .dark .dark\:bg-cyber-dark {
+        background-color: #0d1117;
+      }
+      .dark .dark\:bg-cyber-card {
+        background-color: #161b22;
+      }
+      /* Dropdown styles */
+      .dropdown-menu {
+        display: none;
+        padding-top: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      /* When dropdown is active (clicked) */
+      .dropdown.active .dropdown-menu {
+        display: block;
+      }
+      /* Hover behavior as backup */
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      /* Testimonial Slider Styles */
+      .testimonial-slider {
+        position: relative;
+        overflow: hidden;
+      }
+      .testimonial-slide {
+        display: none;
+        animation: fadeInUp 0.5s ease-out;
+      }
+      .testimonial-slide.active {
+        display: block;
+      }
+      .slider-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+      .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #cbd5e0;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .slider-dot.active {
+        background: #2f81f7;
+        width: 32px;
+        border-radius: 6px;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2F81F7",
+              "cyber-dark": "#0D1117",
+              "cyber-card": "#161B22",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="font-sans bg-gray-50 text-gray-800 dark:bg-cyber-dark dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="sticky top-0 backdrop-blur-md bg-white/80 dark:bg-cyber-dark/80 shadow-sm z-50"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center space-x-2">
+          <i
+            data-feather="shield"
+            class="text-primary w-8 h-8 glow-primary"
+          ></i>
+          <span class="text-2xl font-bold">SecureShield</span>
+        </a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+
+          <!-- Services Dropdown -->
+          <div class="relative dropdown">
+            <a
+              href="#"
+              class="text-gray-800 dark:text-gray-200 hover:text-primary transition flex items-center"
+            >
+              Services
+              <i data-feather="chevron-down" class="w-4 h-4 ml-1"></i>
+            </a>
+            <div
+              class="dropdown-menu absolute top-full left-0 pt-2 w-80 bg-white dark:bg-cyber-card rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700"
+            >
+              <div class="py-3">
+                <a
+                  href="wapt.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i data-feather="code" class="text-blue-600 w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Web App Penetration Testing
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Security testing for web applications
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="vulnerability-assessment.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i
+                      data-feather="search"
+                      class="text-indigo-600 w-5 h-5"
+                    ></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Vulnerability Assessment
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Network security evaluation for SMEs
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="security-consulting.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i data-feather="shield" class="text-green-600 w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Security Consulting
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Essential security guidance for businesses
+                    </p>
+                  </div>
+                </a>
+                <div
+                  class="border-t border-gray-100 dark:border-gray-700 my-2"
+                ></div>
+                <a
+                  href="auditing-compliance.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i
+                      data-feather="clipboard"
+                      class="text-orange-600 w-5 h-5"
+                    ></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Auditing & Compliance
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Regulatory readiness guidance
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="training-awareness.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i data-feather="users" class="text-purple-600 w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Training / Awareness
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Security workshops for your team
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="data-recovery.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i
+                      data-feather="hard-drive"
+                      class="text-cyan-600 w-5 h-5"
+                    ></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Data Recovery
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Professional data recovery solutions
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="team.html" class="hover:text-primary transition">Team</a>
+          <a href="case-studies.html" class="hover:text-primary transition"
+            >Case Studies</a
+          >
+          <a href="blog.html" class="hover:text-primary transition">Blog</a>
+          <a href="resources.html" class="hover:text-primary transition"
+            >Resources</a
+          >
+        </nav>
+        <div class="flex items-center space-x-4">
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="hidden dark:block h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="block dark:hidden h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+          </button>
+          <a
+            href="consulting.html"
+            class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition transform hover:scale-105"
+          >
+            Let's Talk
+          </a>
+          <button id="mobile-menu-button" class="md:hidden p-2">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-cyber-card shadow-lg"
+      >
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+          <div class="border-l-2 border-primary pl-4">
+            <p class="font-semibold mb-2 text-primary">Services</p>
+            <a href="wapt.html" class="block py-1 hover:text-primary transition"
+              >Web App Penetration Testing</a
+            >
+            <a
+              href="vulnerability-assessment.html"
+              class="block py-1 hover:text-primary transition"
+              >Vulnerability Assessment</a
+            >
+            <a
+              href="security-consulting.html"
+              class="block py-1 hover:text-primary transition"
+              >Security Consulting</a
+            >
+            <a
+              href="auditing-compliance.html"
+              class="block py-1 hover:text-primary transition"
+              >Auditing & Compliance</a
+            >
+            <a
+              href="training-awareness.html"
+              class="block py-1 hover:text-primary transition"
+              >Training / Awareness</a
+            >
+            <a
+              href="data-recovery.html"
+              class="block py-1 hover:text-primary transition"
+              >Data Recovery</a
+            >
+          </div>
+          <a href="team.html" class="hover:text-primary transition">Team</a>
+          <a href="case-studies.html" class="hover:text-primary transition"
+            >Case Studies</a
+          >
+          <a href="blog.html" class="hover:text-primary transition">Blog</a>
+          <a href="resources.html" class="hover:text-primary transition"
+            >Resources</a
+          >
+          <a
+            href="consulting.html"
+            class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium text-center transition"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Page Header -->
+      <section
+        class="py-16 md:py-24 bg-gradient-to-br from-primary to-indigo-700"
+      >
+        <div class="container mx-auto px-6 text-center text-white">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fadeInUp">
+            Get in <span class="text-yellow-300">Touch</span>
+          </h1>
+          <p
+            class="text-xl max-w-3xl mx-auto animate-fadeInUp"
+            style="animation-delay: 0.2s"
+          >
+            Let's discuss how we can protect your organization
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="py-20">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div>
+              <h2 class="text-3xl font-bold mb-6">Send Us a Message</h2>
+              <form id="contactForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      for="firstName"
+                      class="block text-sm font-medium mb-2"
+                      >First Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-cyber-card focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                  <div>
+                    <label for="lastName" class="block text-sm font-medium mb-2"
+                      >Last Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      required
+                      class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-cyber-card focus:outline-none focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-2"
+                    >Email Address *</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-cyber-card focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+
+                <div>
+                  <label for="phone" class="block text-sm font-medium mb-2"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-cyber-card focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+
+                <div>
+                  <label for="company" class="block text-sm font-medium mb-2"
+                    >Company</label
+                  >
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-cyber-card focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+
+                <div>
+                  <label for="service" class="block text-sm font-medium mb-2"
+                    >Service Interest *</label
+                  >
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-cyber-card focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="penetration-testing">
+                      Penetration Testing
+                    </option>
+                    <option value="vulnerability-assessment">
+                      Vulnerability Assessment
+                    </option>
+                    <option value="security-monitoring">
+                      Security Monitoring
+                    </option>
+                    <option value="data-recovery">Data Recovery</option>
+                    <option value="consulting">Security Consulting</option>
+                    <option value="training">Security Training</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-medium mb-2"
+                    >Message *</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-cyber-card focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Tell us about your security needs..."
+                  ></textarea>
+                </div>
+
+                <div class="flex items-start">
+                  <input
+                    type="checkbox"
+                    id="consent"
+                    name="consent"
+                    required
+                    class="mt-1 mr-3"
+                  />
+                  <label
+                    for="consent"
+                    class="text-sm text-gray-600 dark:text-gray-400"
+                  >
+                    I agree to receive communications from SecureShield and
+                    understand my data will be processed according to the
+                    Privacy Policy.
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  class="w-full bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-medium transition transform hover:scale-105 flex items-center justify-center"
+                >
+                  <i data-feather="send" class="w-5 h-5 mr-2"></i>
+                  Send Message
+                </button>
+
+                <!-- Success/Error Messages -->
+                <div id="formMessage" class="hidden p-4 rounded-lg"></div>
+              </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+              <h2 class="text-3xl font-bold mb-6">Contact Information</h2>
+              <p class="text-gray-600 dark:text-gray-400 mb-8">
+                Have questions? We're here to help. Reach out to us through any
+                of these channels:
+              </p>
+
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                    <i data-feather="mail" class="text-primary w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">Email</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      contact@secureshield.com
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      support@secureshield.com
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                    <i data-feather="phone" class="text-primary w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">Phone</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      +1 (888) 123-4567
+                    </p>
+                    <p class="text-sm text-gray-500 dark:text-gray-500">
+                      Mon-Fri 9am-6pm EST
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                    <i data-feather="map-pin" class="text-primary w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">Office</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      123 Security Avenue
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      Cyber City, CS 12345
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div class="bg-primary/10 p-3 rounded-lg mr-4">
+                    <i data-feather="clock" class="text-primary w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold mb-1">Business Hours</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      Monday - Friday: 9:00 AM - 6:00 PM
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      Saturday - Sunday: Closed
+                    </p>
+                    <p class="text-sm text-primary mt-2">
+                      24/7 Emergency Support Available
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Media -->
+              <div class="mt-8">
+                <h3 class="font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="bg-primary/10 p-3 rounded-lg hover:bg-primary hover:text-white transition"
+                  >
+                    <i data-feather="linkedin" class="w-5 h-5"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-primary/10 p-3 rounded-lg hover:bg-primary hover:text-white transition"
+                  >
+                    <i data-feather="twitter" class="w-5 h-5"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-primary/10 p-3 rounded-lg hover:bg-primary hover:text-white transition"
+                  >
+                    <i data-feather="facebook" class="w-5 h-5"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-primary/10 p-3 rounded-lg hover:bg-primary hover:text-white transition"
+                  >
+                    <i data-feather="github" class="w-5 h-5"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial Slider Section -->
+      <section class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              What Our Clients <span class="text-primary">Say</span>
+            </h2>
+            <p
+              class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
+            >
+              Don't just take our word for it - hear from our satisfied clients
+            </p>
+          </div>
+
+          <div class="testimonial-slider max-w-4xl mx-auto">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-slide active">
+              <div
+                class="bg-white dark:bg-cyber-card rounded-xl shadow-lg p-8 md:p-12"
+              >
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4"
+                  >
+                    JD
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold">John Davidson</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      CTO, TechCorp Inc.
+                    </p>
+                    <div class="flex text-yellow-400 mt-1">
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-lg text-gray-700 dark:text-gray-300 italic">
+                  "SecureShield transformed our security posture completely.
+                  Their penetration testing identified critical vulnerabilities
+                  we didn't know existed. Within 3 months, we saw a 95%
+                  reduction in security incidents. Highly recommended!"
+                </p>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-slide">
+              <div
+                class="bg-white dark:bg-cyber-card rounded-xl shadow-lg p-8 md:p-12"
+              >
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4"
+                  >
+                    SM
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold">Sarah Martinez</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      CISO, Financial Services Co.
+                    </p>
+                    <div class="flex text-yellow-400 mt-1">
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-lg text-gray-700 dark:text-gray-300 italic">
+                  "The team at SecureShield helped us achieve SOC 2 compliance
+                  ahead of schedule. Their expertise and professionalism are
+                  unmatched. We now have peace of mind knowing our customer data
+                  is protected."
+                </p>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-slide">
+              <div
+                class="bg-white dark:bg-cyber-card rounded-xl shadow-lg p-8 md:p-12"
+              >
+                <div class="flex items-center mb-6">
+                  <div
+                    class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4"
+                  >
+                    MK
+                  </div>
+                  <div>
+                    <h4 class="text-xl font-bold">Michael Kim</h4>
+                    <p class="text-gray-600 dark:text-gray-400">
+                      CEO, HealthTech Solutions
+                    </p>
+                    <div class="flex text-yellow-400 mt-1">
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                      <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-lg text-gray-700 dark:text-gray-300 italic">
+                  "When we suffered a ransomware attack, SecureShield's incident
+                  response team was on-site within hours. They contained the
+                  threat, recovered our data, and implemented safeguards to
+                  prevent future attacks. True professionals!"
+                </p>
+              </div>
+            </div>
+
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+              <span class="slider-dot active" onclick="showSlide(0)"></span>
+              <span class="slider-dot" onclick="showSlide(1)"></span>
+              <span class="slider-dot" onclick="showSlide(2)"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section (Optional) -->
+      <section class="py-16">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-8">Visit Our Office</h2>
+          <div
+            class="bg-gray-300 dark:bg-gray-700 rounded-xl overflow-hidden"
+            style="height: 400px"
+          >
+            <!-- Replace with actual Google Maps embed -->
+            <div
+              class="w-full h-full flex items-center justify-center text-gray-500"
+            >
+              <div class="text-center">
+                <i
+                  data-feather="map-pin"
+                  class="w-16 h-16 mx-auto mb-4 text-primary"
+                ></i>
+                <p class="text-lg">Map will be displayed here</p>
+                <p class="text-sm mt-2">
+                  123 Security Avenue, Cyber City, CS 12345
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div>
+            <a href="#" class="flex items-center space-x-2 mb-6">
+              <i
+                data-feather="shield"
+                class="text-primary w-8 h-8 glow-primary"
+              ></i>
+              <span class="text-2xl font-bold">SecureShield</span>
+            </a>
+            <p class="text-gray-400 mb-6">
+              Enterprise-grade cybersecurity solutions to protect your digital
+              assets.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Services</h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="services.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Cybersecurity</a
+                >
+              </li>
+              <li>
+                <a
+                  href="data-recovery.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Data Recovery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="consulting.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Consulting</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Company</h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="team.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="case-studies.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Contact</h3>
+            <p class="text-gray-400">+1 (888) 123-4567</p>
+            <p class="text-gray-400">contact@secureshield.com</p>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>© 2024 SecureShield. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Testimonial Slider
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".testimonial-slide");
+      const dots = document.querySelectorAll(".slider-dot");
+
+      function showSlide(index) {
+        slides.forEach((slide) => slide.classList.remove("active"));
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        currentSlide = index;
+        slides[currentSlide].classList.add("active");
+        dots[currentSlide].classList.add("active");
+      }
+
+      // Auto-advance slider every 5 seconds
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 5000);
+
+      // Contact Form Handler
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const formData = {
+            firstName: document.getElementById("firstName").value,
+            lastName: document.getElementById("lastName").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            company: document.getElementById("company").value,
+            service: document.getElementById("service").value,
+            message: document.getElementById("message").value,
+          };
+
+          const formMessage = document.getElementById("formMessage");
+
+          try {
+            // EmailJS Integration (replace with your service ID and template ID)
+            // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData);
+
+            // For now, show success message
+            formMessage.className =
+              "p-4 rounded-lg bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300";
+            formMessage.textContent =
+              "Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.";
+            formMessage.classList.remove("hidden");
+
+            // Reset form
+            this.reset();
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+              formMessage.classList.add("hidden");
+            }, 5000);
+          } catch (error) {
+            formMessage.className =
+              "p-4 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300";
+            formMessage.textContent =
+              "Oops! Something went wrong. Please try again or contact us directly.";
+            formMessage.classList.remove("hidden");
+          }
+        });
+
+      // Theme Toggle
+      document.addEventListener("DOMContentLoaded", () => {
+        feather.replace();
+
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // Services Dropdown Click Behavior
+        const dropdown = document.querySelector(".dropdown");
+        const dropdownTrigger = dropdown.querySelector("a");
+        const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+
+        // Toggle dropdown on click
+        dropdownTrigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          dropdown.classList.toggle("active");
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("active");
+          }
+        });
+
+        // Keep dropdown open when hovering over it
+        dropdownMenu.addEventListener("mouseenter", () => {
+          dropdown.classList.add("active");
+        });
+
+        // Close dropdown only when mouse leaves both trigger and menu
+        let leaveTimer;
+        dropdown.addEventListener("mouseleave", () => {
+          leaveTimer = setTimeout(() => {
+            dropdown.classList.remove("active");
+          }, 200);
+        });
+
+        dropdown.addEventListener("mouseenter", () => {
+          clearTimeout(leaveTimer);
+        });
+
+        const themeToggle = document.getElementById("theme-toggle");
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem("theme");
+        if (
+          savedTheme === "dark" ||
+          (!savedTheme &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          html.classList.add("dark");
+        } else {
+          html.classList.remove("dark");
+        }
+
+        themeToggle.addEventListener("click", () => {
+          html.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            html.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

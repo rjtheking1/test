@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Application Penetration Testing (WAPT) - SecureShield</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      .glow-primary {
+        filter: drop-shadow(0 0 8px rgba(47, 129, 247, 0.6));
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(47, 129, 247, 0.1);
+      }
+      .dark .dark\:bg-cyber-dark {
+        background-color: #0d1117;
+      }
+      .dark .dark\:bg-cyber-card {
+        background-color: #161b22;
+      }
+      /* Dropdown styles */
+      .dropdown-menu {
+        display: none;
+        padding-top: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      /* When dropdown is active (clicked) */
+      .dropdown.active .dropdown-menu {
+        display: block;
+      }
+      /* Hover behavior as backup */
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2F81F7",
+              "cyber-dark": "#0D1117",
+              "cyber-card": "#161B22",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="font-sans bg-gray-50 text-gray-800 dark:bg-cyber-dark dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header with Dropdown -->
+    <header
+      class="sticky top-0 backdrop-blur-md bg-white/80 dark:bg-cyber-dark/80 shadow-sm z-50"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center space-x-2">
+          <i
+            data-feather="shield"
+            class="text-primary w-8 h-8 glow-primary"
+          ></i>
+          <span class="text-2xl font-bold">SecureShield</span>
+        </a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+
+          <!-- Services Dropdown -->
+          <div class="relative dropdown">
+            <a
+              href="#"
+              class="text-gray-800 dark:text-gray-200 hover:text-primary transition flex items-center"
+            >
+              Services
+              <i data-feather="chevron-down" class="w-4 h-4 ml-1"></i>
+            </a>
+            <div
+              class="dropdown-menu absolute top-full left-0 pt-2 w-80 bg-white dark:bg-cyber-card rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700"
+            >
+              <div class="py-3">
+                <a
+                  href="wapt.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i data-feather="code" class="text-blue-600 w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Web App Penetration Testing
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Security testing for web applications
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="vulnerability-assessment.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i
+                      data-feather="search"
+                      class="text-indigo-600 w-5 h-5"
+                    ></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Vulnerability Assessment
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Network security evaluation for SMEs
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="security-consulting.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i data-feather="shield" class="text-green-600 w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Security Consulting
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Essential security guidance for businesses
+                    </p>
+                  </div>
+                </a>
+                <div
+                  class="border-t border-gray-100 dark:border-gray-700 my-2"
+                ></div>
+                <a
+                  href="auditing-compliance.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i
+                      data-feather="clipboard"
+                      class="text-orange-600 w-5 h-5"
+                    ></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Auditing & Compliance
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Regulatory readiness guidance
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="training-awareness.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i data-feather="users" class="text-purple-600 w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Training / Awareness
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Security workshops for your team
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="data-recovery.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i
+                      data-feather="hard-drive"
+                      class="text-cyan-600 w-5 h-5"
+                    ></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Data Recovery
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Professional data recovery solutions
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="team.html" class="hover:text-primary transition">Team</a>
+          <a href="case-studies.html" class="hover:text-primary transition"
+            >Case Studies</a
+          >
+          <a href="blog.html" class="hover:text-primary transition">Blog</a>
+          <a href="resources.html" class="hover:text-primary transition"
+            >Resources</a
+          >
+        </nav>
+        <div class="flex items-center space-x-4">
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="hidden dark:block h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="block dark:hidden h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+          </button>
+          <a
+            href="consulting.html"
+            class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition transform hover:scale-105"
+          >
+            Let's Talk
+          </a>
+          <button id="mobile-menu-button" class="md:hidden p-2">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-cyber-card shadow-lg"
+      >
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+          <div class="border-l-2 border-primary pl-4">
+            <p class="font-semibold mb-2 text-primary">Services</p>
+            <a href="wapt.html" class="block py-1 hover:text-primary transition"
+              >Web App Penetration Testing</a
+            >
+            <a
+              href="vulnerability-assessment.html"
+              class="block py-1 hover:text-primary transition"
+              >Vulnerability Assessment</a
+            >
+            <a
+              href="security-consulting.html"
+              class="block py-1 hover:text-primary transition"
+              >Security Consulting</a
+            >
+            <a
+              href="auditing-compliance.html"
+              class="block py-1 hover:text-primary transition"
+              >Auditing & Compliance</a
+            >
+            <a
+              href="training-awareness.html"
+              class="block py-1 hover:text-primary transition"
+              >Training / Awareness</a
+            >
+            <a
+              href="data-recovery.html"
+              class="block py-1 hover:text-primary transition"
+              >Data Recovery</a
+            >
+          </div>
+          <a href="team.html" class="hover:text-primary transition">Team</a>
+          <a href="case-studies.html" class="hover:text-primary transition"
+            >Case Studies</a
+          >
+          <a href="blog.html" class="hover:text-primary transition">Blog</a>
+          <a href="resources.html" class="hover:text-primary transition"
+            >Resources</a
+          >
+          <a
+            href="consulting.html"
+            class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium text-center transition"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-purple-700"
+      >
+        <div class="container mx-auto px-6 text-center text-white">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fadeInUp">
+            Web Application
+            <span class="text-yellow-300">Penetration Testing</span> (WAPT)
+          </h1>
+          <p
+            class="text-xl max-w-3xl mx-auto animate-fadeInUp"
+            style="animation-delay: 0.2s"
+          >
+            Comprehensive security testing for web applications targeting small
+            business websites
+          </p>
+        </div>
+      </section>
+
+      <!-- Service Details -->
+      <section class="py-20">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Description -->
+            <div>
+              <h2 class="text-3xl font-bold mb-6">What is WAPT?</h2>
+              <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                Web Application Penetration Testing (WAPT) is a comprehensive
+                security assessment designed to identify vulnerabilities in your
+                web applications before malicious attackers can exploit them.
+              </p>
+              <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                Our expert team simulates real-world attacks to uncover security
+                weaknesses in your web applications, providing you with
+                actionable insights to strengthen your defenses.
+              </p>
+
+              <div
+                class="bg-primary/10 border-l-4 border-primary p-6 rounded-lg mb-8"
+              >
+                <h3 class="text-xl font-bold mb-3 flex items-center">
+                  <i
+                    data-feather="target"
+                    class="w-6 h-6 text-primary mr-2"
+                  ></i>
+                  Target Audience
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300">
+                  Small business websites including startups and local shops
+                  going online
+                </p>
+              </div>
+            </div>
+
+            <!-- Tools & Methods -->
+            <div class="bg-white dark:bg-cyber-card rounded-xl shadow-lg p-8">
+              <h3 class="text-2xl font-bold mb-6 flex items-center">
+                <i data-feather="tool" class="w-7 h-7 text-primary mr-3"></i>
+                Tools We Use
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex items-start">
+                  <i
+                    data-feather="check-circle"
+                    class="w-6 h-6 text-green-500 mr-3 mt-1"
+                  ></i>
+                  <div>
+                    <p class="font-semibold">Burp Suite Community / Pro</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Industry-standard web vulnerability scanner
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-feather="check-circle"
+                    class="w-6 h-6 text-green-500 mr-3 mt-1"
+                  ></i>
+                  <div>
+                    <p class="font-semibold">OWASP ZAP</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Open-source web application security scanner
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-feather="check-circle"
+                    class="w-6 h-6 text-green-500 mr-3 mt-1"
+                  ></i>
+                  <div>
+                    <p class="font-semibold">Nikto</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Web server vulnerability scanner
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-feather="check-circle"
+                    class="w-6 h-6 text-green-500 mr-3 mt-1"
+                  ></i>
+                  <div>
+                    <p class="font-semibold">Nmap</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      Network discovery and security auditing
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What We Test -->
+      <section class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            What We <span class="text-primary">Test</span>
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md p-6 card-hover transition-all duration-300"
+            >
+              <i data-feather="lock" class="text-primary w-12 h-12 mb-4"></i>
+              <h3 class="text-xl font-bold mb-3">Authentication</h3>
+              <p class="text-gray-600 dark:text-gray-400">
+                Login bypass attempts, password security, session management
+              </p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md p-6 card-hover transition-all duration-300"
+            >
+              <i
+                data-feather="database"
+                class="text-primary w-12 h-12 mb-4"
+              ></i>
+              <h3 class="text-xl font-bold mb-3">SQL Injection</h3>
+              <p class="text-gray-600 dark:text-gray-400">
+                Database security testing and injection vulnerability assessment
+              </p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md p-6 card-hover transition-all duration-300"
+            >
+              <i data-feather="code" class="text-primary w-12 h-12 mb-4"></i>
+              <h3 class="text-xl font-bold mb-3">XSS (Cross-Site Scripting)</h3>
+              <p class="text-gray-600 dark:text-gray-400">
+                Input validation and output encoding verification
+              </p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md p-6 card-hover transition-all duration-300"
+            >
+              <i data-feather="shield" class="text-primary w-12 h-12 mb-4"></i>
+              <h3 class="text-xl font-bold mb-3">CSRF Protection</h3>
+              <p class="text-gray-600 dark:text-gray-400">
+                Cross-Site Request Forgery vulnerability testing
+              </p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md p-6 card-hover transition-all duration-300"
+            >
+              <i
+                data-feather="file-text"
+                class="text-primary w-12 h-12 mb-4"
+              ></i>
+              <h3 class="text-xl font-bold mb-3">File Upload Security</h3>
+              <p class="text-gray-600 dark:text-gray-400">
+                Malicious file upload prevention and validation
+              </p>
+            </div>
+
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md p-6 card-hover transition-all duration-300"
+            >
+              <i data-feather="server" class="text-primary w-12 h-12 mb-4"></i>
+              <h3 class="text-xl font-bold mb-3">Server Configuration</h3>
+              <p class="text-gray-600 dark:text-gray-400">
+                Security headers, SSL/TLS configuration, and hardening
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Secure Your Web Application?
+          </h2>
+          <p class="text-xl max-w-3xl mx-auto mb-8">
+            Get a comprehensive penetration test and protect your business from
+            cyber threats
+          </p>
+          <a
+            href="consulting.html"
+            class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full font-medium transition transform hover:scale-105 inline-block"
+          >
+            Request Assessment
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div>
+            <a href="index.html" class="flex items-center space-x-2 mb-6">
+              <i
+                data-feather="shield"
+                class="text-primary w-8 h-8 glow-primary"
+              ></i>
+              <span class="text-2xl font-bold">SecureShield</span>
+            </a>
+            <p class="text-gray-400 mb-6">
+              Enterprise-grade cybersecurity solutions to protect your digital
+              assets.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Services</h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="wapt.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Web App Penetration Testing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="vulnerability-assessment.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Vulnerability Assessment</a
+                >
+              </li>
+              <li>
+                <a
+                  href="data-recovery.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Data Recovery</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Company</h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="team.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="case-studies.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Contact</h3>
+            <p class="text-gray-400">+1 (888) 123-4567</p>
+            <p class="text-gray-400">contact@secureshield.com</p>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>© 2024 SecureShield. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        feather.replace();
+
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // Services Dropdown Click Behavior
+        const dropdown = document.querySelector(".dropdown");
+        const dropdownTrigger = dropdown.querySelector("a");
+        const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+
+        // Toggle dropdown on click
+        dropdownTrigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          dropdown.classList.toggle("active");
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("active");
+          }
+        });
+
+        // Keep dropdown open when hovering over it
+        dropdownMenu.addEventListener("mouseenter", () => {
+          dropdown.classList.add("active");
+        });
+
+        // Close dropdown only when mouse leaves both trigger and menu
+        let leaveTimer;
+        dropdown.addEventListener("mouseleave", () => {
+          leaveTimer = setTimeout(() => {
+            dropdown.classList.remove("active");
+          }, 200);
+        });
+
+        dropdown.addEventListener("mouseenter", () => {
+          clearTimeout(leaveTimer);
+        });
+
+        const themeToggle = document.getElementById("theme-toggle");
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem("theme");
+        if (
+          savedTheme === "dark" ||
+          (!savedTheme &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          html.classList.add("dark");
+        } else {
+          html.classList.remove("dark");
+        }
+
+        themeToggle.addEventListener("click", () => {
+          html.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            html.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

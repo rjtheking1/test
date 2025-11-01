@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORA Cybersec - Website Launcher</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 80%;
+            max-width: 800px;
+        }
+        h1 {
+            color: #2a4b8d;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .page-card {
+            background-color: #f9f9f9;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .page-card h3 {
+            color: #2a4b8d;
+            margin-top: 0;
+        }
+        .page-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #2a4b8d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1a3a7c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ORA Cybersec Website</h1>
+        <div class="page-grid">
+            <div class="page-card">
+                <h3>Homepage</h3>
+                <p>Main landing page with company overview and services</p>
+                <a href="index.html" class="btn">View Page</a>
+            </div>
+            <div class="page-card">
+                <h3>Services</h3>
+                <p>Detailed information about our security services</p>
+                <a href="services.html" class="btn">View Page</a>
+            </div>
+            <div class="page-card">
+                <h3>Pricing</h3>
+                <p>Pricing plans with monthly/quarterly/annual options</p>
+                <a href="pricing.html" class="btn">View Page</a>
+            </div>
+            <div class="page-card">
+                <h3>Team</h3>
+                <p>Meet our expert cybersecurity professionals</p>
+                <a href="team.html" class="btn">View Page</a>
+            </div>
+            <div class="page-card">
+                <h3>Case Studies</h3>
+                <p>Success stories and client implementations</p>
+                <a href="case-studies.html" class="btn">View Page</a>
+            </div>
+            <div class="page-card">
+                <h3>Resources</h3>
+                <p>Security guides and educational content</p>
+                <a href="resources.html" class="btn">View Page</a>
+            </div>
+            <div class="page-card">
+                <h3>Let's Talk</h3>
+                <p>Contact form to get security consulting</p>
+                <a href="consulting.html" class="btn">View Page</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

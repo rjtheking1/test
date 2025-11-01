@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Blog - SecureShield</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      .glow-primary {
+        filter: drop-shadow(0 0 8px rgba(47, 129, 247, 0.6));
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(47, 129, 247, 0.1);
+      }
+      .dark .dark\:bg-cyber-dark {
+        background-color: #0d1117;
+      }
+      .dark .dark\:bg-cyber-card {
+        background-color: #161b22;
+      }
+      /* Dropdown styles */
+      .dropdown-menu {
+        display: none;
+        padding-top: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      /* When dropdown is active (clicked) */
+      .dropdown.active .dropdown-menu {
+        display: block;
+      }
+      /* Hover behavior as backup */
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2F81F7",
+              "cyber-dark": "#0D1117",
+              "cyber-card": "#161B22",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="font-sans bg-gray-50 text-gray-800 dark:bg-cyber-dark dark:text-gray-200 transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="sticky top-0 backdrop-blur-md bg-white/80 dark:bg-cyber-dark/80 shadow-sm z-50"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center space-x-2">
+          <i
+            data-feather="shield"
+            class="text-primary w-8 h-8 glow-primary"
+          ></i>
+          <span class="text-2xl font-bold">SecureShield</span>
+        </a>
+        <nav class="hidden md:flex space-x-8">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+
+          <!-- Services Dropdown -->
+          <div class="relative dropdown">
+            <a
+              href="#"
+              class="text-gray-800 dark:text-gray-200 hover:text-primary transition flex items-center"
+            >
+              Services
+              <i data-feather="chevron-down" class="w-4 h-4 ml-1"></i>
+            </a>
+            <div
+              class="dropdown-menu absolute top-full left-0 pt-2 w-80 bg-white dark:bg-cyber-card rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700"
+            >
+              <div class="py-3">
+                <a
+                  href="wapt.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i data-feather="code" class="text-blue-600 w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Web App Penetration Testing
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Security testing for web applications
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="vulnerability-assessment.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i
+                      data-feather="search"
+                      class="text-indigo-600 w-5 h-5"
+                    ></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Vulnerability Assessment
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Network security evaluation for SMEs
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="security-consulting.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i data-feather="shield" class="text-green-600 w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Security Consulting
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Essential security guidance for businesses
+                    </p>
+                  </div>
+                </a>
+                <div
+                  class="border-t border-gray-100 dark:border-gray-700 my-2"
+                ></div>
+                <a
+                  href="auditing-compliance.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i
+                      data-feather="clipboard"
+                      class="text-orange-600 w-5 h-5"
+                    ></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Auditing & Compliance
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Regulatory readiness guidance
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="training-awareness.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i data-feather="users" class="text-purple-600 w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Training / Awareness
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Security workshops for your team
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="data-recovery.html"
+                  class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group"
+                >
+                  <div
+                    class="w-10 h-10 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0"
+                  >
+                    <i
+                      data-feather="hard-drive"
+                      class="text-cyan-600 w-5 h-5"
+                    ></i>
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition"
+                    >
+                      Data Recovery
+                    </p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">
+                      Professional data recovery solutions
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="team.html" class="hover:text-primary transition">Team</a>
+          <a href="case-studies.html" class="hover:text-primary transition"
+            >Case Studies</a
+          >
+          <a href="blog.html" class="text-primary transition">Blog</a>
+          <a href="resources.html" class="hover:text-primary transition"
+            >Resources</a
+          >
+        </nav>
+        <div class="flex items-center space-x-4">
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="hidden dark:block h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="block dark:hidden h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+          </button>
+          <a
+            href="consulting.html"
+            class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition transform hover:scale-105"
+          >
+            Let's Talk
+          </a>
+          <button id="mobile-menu-button" class="md:hidden p-2">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-cyber-card shadow-lg"
+      >
+        <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+          <a href="index.html" class="hover:text-primary transition">Home</a>
+          <div class="border-l-2 border-primary pl-4">
+            <p class="font-semibold mb-2 text-primary">Services</p>
+            <a href="wapt.html" class="block py-1 hover:text-primary transition"
+              >Web App Penetration Testing</a
+            >
+            <a
+              href="vulnerability-assessment.html"
+              class="block py-1 hover:text-primary transition"
+              >Vulnerability Assessment</a
+            >
+            <a
+              href="security-consulting.html"
+              class="block py-1 hover:text-primary transition"
+              >Security Consulting</a
+            >
+            <a
+              href="auditing-compliance.html"
+              class="block py-1 hover:text-primary transition"
+              >Auditing & Compliance</a
+            >
+            <a
+              href="training-awareness.html"
+              class="block py-1 hover:text-primary transition"
+              >Training / Awareness</a
+            >
+            <a
+              href="data-recovery.html"
+              class="block py-1 hover:text-primary transition"
+              >Data Recovery</a
+            >
+          </div>
+          <a href="team.html" class="hover:text-primary transition">Team</a>
+          <a href="case-studies.html" class="hover:text-primary transition"
+            >Case Studies</a
+          >
+          <a href="blog.html" class="text-primary transition">Blog</a>
+          <a href="resources.html" class="hover:text-primary transition"
+            >Resources</a
+          >
+          <a
+            href="consulting.html"
+            class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium text-center transition"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Page Header -->
+      <section
+        class="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-indigo-700"
+      >
+        <div class="container mx-auto px-6 text-center text-white">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fadeInUp">
+            Security <span class="text-yellow-300">Insights</span> Blog
+          </h1>
+          <p
+            class="text-xl max-w-3xl mx-auto animate-fadeInUp"
+            style="animation-delay: 0.2s"
+          >
+            Latest trends, tips, and best practices in cybersecurity
+          </p>
+        </div>
+      </section>
+
+      <!-- Featured Post -->
+      <section class="py-16">
+        <div class="container mx-auto px-6">
+          <div
+            class="bg-white dark:bg-cyber-card rounded-xl shadow-lg overflow-hidden"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2">
+              <div class="h-64 md:h-auto">
+                <img
+                  src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Featured"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-8 md:p-12">
+                <div class="flex items-center mb-4">
+                  <span
+                    class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full"
+                    >FEATURED</span
+                  >
+                  <span class="ml-3 text-sm text-gray-500 dark:text-gray-400"
+                    >January 15, 2024</span
+                  >
+                </div>
+                <h2 class="text-3xl font-bold mb-4">
+                  The Rise of AI-Powered Cyber Attacks in 2024
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">
+                  Explore how artificial intelligence is being weaponized by
+                  cybercriminals and what organizations can do to protect
+                  themselves from this emerging threat.
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  Read Full Article
+                  <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Posts Grid -->
+      <section class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Post 1 -->
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden card-hover transition-all duration-300"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Blog post"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-3">
+                  <span
+                    class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-primary px-3 py-1 rounded-full"
+                    >Security Tips</span
+                  >
+                  <span class="ml-auto text-sm text-gray-500 dark:text-gray-400"
+                    >Jan 12, 2024</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold mb-3">
+                  10 Essential Password Security Best Practices
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  Learn how to create and manage strong passwords that keep your
+                  accounts safe from unauthorized access.
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  Read More
+                  <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden card-hover transition-all duration-300"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Blog post"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-3">
+                  <span
+                    class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-primary px-3 py-1 rounded-full"
+                    >Compliance</span
+                  >
+                  <span class="ml-auto text-sm text-gray-500 dark:text-gray-400"
+                    >Jan 10, 2024</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold mb-3">
+                  GDPR Compliance Guide for Small Businesses
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  A comprehensive guide to understanding and implementing GDPR
+                  requirements for your organization.
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  Read More
+                  <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden card-hover transition-all duration-300"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Blog post"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-3">
+                  <span
+                    class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-primary px-3 py-1 rounded-full"
+                    >Threats</span
+                  >
+                  <span class="ml-auto text-sm text-gray-500 dark:text-gray-400"
+                    >Jan 8, 2024</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold mb-3">
+                  Ransomware Trends: What to Watch in 2024
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  Discover the latest ransomware attack vectors and how to
+                  protect your organization from these threats.
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  Read More
+                  <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Post 4 -->
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden card-hover transition-all duration-300"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Blog post"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-3">
+                  <span
+                    class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-primary px-3 py-1 rounded-full"
+                    >Best Practices</span
+                  >
+                  <span class="ml-auto text-sm text-gray-500 dark:text-gray-400"
+                    >Jan 5, 2024</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold mb-3">
+                  Zero Trust Architecture Explained
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  Understanding the Zero Trust security model and how to
+                  implement it in your organization.
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  Read More
+                  <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Post 5 -->
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden card-hover transition-all duration-300"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Blog post"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-3">
+                  <span
+                    class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-primary px-3 py-1 rounded-full"
+                    >Case Study</span
+                  >
+                  <span class="ml-auto text-sm text-gray-500 dark:text-gray-400"
+                    >Jan 3, 2024</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold mb-3">
+                  How We Stopped a Major Cyberattack
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  A real-world case study of how our team detected and prevented
+                  a sophisticated attack.
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  Read More
+                  <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Post 6 -->
+            <div
+              class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden card-hover transition-all duration-300"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                alt="Blog post"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div class="flex items-center mb-3">
+                  <span
+                    class="text-xs font-medium bg-blue-100 dark:bg-blue-900/30 text-primary px-3 py-1 rounded-full"
+                    >Training</span
+                  >
+                  <span class="ml-auto text-sm text-gray-500 dark:text-gray-400"
+                    >Dec 28, 2023</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold mb-3">
+                  Employee Security Training: A Complete Guide
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+                  Build a security-aware culture in your organization with
+                  effective employee training programs.
+                </p>
+                <a href="#" class="text-primary font-medium flex items-center">
+                  Read More
+                  <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Subscribe -->
+      <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6">
+          <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">
+              Subscribe to Our Security Newsletter
+            </h2>
+            <p class="text-xl mb-8">
+              Get the latest cybersecurity insights, tips, and updates delivered
+              to your inbox
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+              <input
+                type="email"
+                placeholder="Your email address"
+                class="flex-1 px-6 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
+              />
+              <button
+                type="submit"
+                class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full font-medium transition transform hover:scale-105"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p class="text-sm mt-4 opacity-80">
+              We respect your privacy. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div>
+            <a href="#" class="flex items-center space-x-2 mb-6">
+              <i
+                data-feather="shield"
+                class="text-primary w-8 h-8 glow-primary"
+              ></i>
+              <span class="text-2xl font-bold">SecureShield</span>
+            </a>
+            <p class="text-gray-400 mb-6">
+              Enterprise-grade cybersecurity solutions to protect your digital
+              assets.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Services</h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="services.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Cybersecurity</a
+                >
+              </li>
+              <li>
+                <a
+                  href="data-recovery.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Data Recovery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="consulting.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Consulting</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Company</h3>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  href="team.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="case-studies.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="blog.html"
+                  class="text-gray-400 hover:text-primary transition"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Contact</h3>
+            <p class="text-gray-400">+1 (888) 123-4567</p>
+            <p class="text-gray-400">contact@secureshield.com</p>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>© 2024 SecureShield. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        feather.replace();
+
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // Services Dropdown Click Behavior
+        const dropdown = document.querySelector(".dropdown");
+        const dropdownTrigger = dropdown.querySelector("a");
+        const dropdownMenu = dropdown.querySelector(".dropdown-menu");
+
+        // Toggle dropdown on click
+        dropdownTrigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          dropdown.classList.toggle("active");
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("active");
+          }
+        });
+
+        // Keep dropdown open when hovering over it
+        dropdownMenu.addEventListener("mouseenter", () => {
+          dropdown.classList.add("active");
+        });
+
+        // Close dropdown only when mouse leaves both trigger and menu
+        let leaveTimer;
+        dropdown.addEventListener("mouseleave", () => {
+          leaveTimer = setTimeout(() => {
+            dropdown.classList.remove("active");
+          }, 200);
+        });
+
+        dropdown.addEventListener("mouseenter", () => {
+          clearTimeout(leaveTimer);
+        });
+
+        const themeToggle = document.getElementById("theme-toggle");
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem("theme");
+        if (
+          savedTheme === "dark" ||
+          (!savedTheme &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          html.classList.add("dark");
+        } else {
+          html.classList.remove("dark");
+        }
+
+        themeToggle.addEventListener("click", () => {
+          html.classList.toggle("dark");
+          localStorage.setItem(
+            "theme",
+            html.classList.contains("dark") ? "dark" : "light"
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

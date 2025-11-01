@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Resources - SecureShield | Enterprise-Grade Cybersecurity</title>
+    <link rel="icon" type="image/x-icon" href="shield-icon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2F81F7',
+                        'cyber-dark': '#0D1117',
+                        'cyber-card': '#161B22'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .glow-primary {
+            filter: drop-shadow(0 0 8px rgba(47, 129, 247, 0.6));
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(47, 129, 247, 0.1);
+        }
+        .dark .dark\:bg-cyber-dark {
+            background-color: #0D1117;
+        }
+        .dark .dark\:bg-cyber-card {
+            background-color: #161B22;
+        }
+        /* Dropdown styles */
+        .dropdown-menu {
+            display: none;
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        /* When dropdown is active (clicked) */
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+        /* Hover behavior as backup */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 dark:bg-cyber-dark dark:text-gray-200 transition-colors duration-300">
+    <!-- Header -->
+    <header class="sticky top-0 backdrop-blur-md bg-white/80 dark:bg-cyber-dark/80 shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="shield-icon.svg" class="text-primary w-8 h-8 glow-primary">
+                <span class="text-2xl font-bold">SecureShield</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-primary transition">Home</a>
+                
+                <!-- Services Dropdown -->
+                <div class="relative dropdown">
+                    <a href="#" class="text-gray-800 dark:text-gray-200 hover:text-primary transition flex items-center">
+                        Services
+                        <i data-feather="chevron-down" class="w-4 h-4 ml-1"></i>
+                    </a>
+                    <div class="dropdown-menu absolute top-full left-0 pt-2 w-80 bg-white dark:bg-cyber-card rounded-xl shadow-2xl border border-gray-100 dark:border-gray-700">
+                        <div class="py-3">
+                        <a href="wapt.html" class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group">
+                            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i data-feather="code" class="text-blue-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition">Web App Penetration Testing</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Security testing for web applications</p>
+                            </div>
+                        </a>
+                        <a href="vulnerability-assessment.html" class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group">
+                            <div class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i data-feather="search" class="text-indigo-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition">Vulnerability Assessment</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Network security evaluation for SMEs</p>
+                            </div>
+                        </a>
+                        <a href="security-consulting.html" class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group">
+                            <div class="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i data-feather="shield" class="text-green-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition">Security Consulting</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Essential security guidance for businesses</p>
+                            </div>
+                        </a>
+                        <div class="border-t border-gray-100 dark:border-gray-700 my-2"></div>
+                        <a href="auditing-compliance.html" class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group">
+                            <div class="w-10 h-10 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i data-feather="clipboard" class="text-orange-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition">Auditing & Compliance</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Regulatory readiness guidance</p>
+                            </div>
+                        </a>
+                        <a href="training-awareness.html" class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group">
+                            <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i data-feather="users" class="text-purple-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition">Training / Awareness</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Security workshops for your team</p>
+                            </div>
+                        </a>
+                        <a href="data-recovery.html" class="flex items-start px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition group">
+                            <div class="w-10 h-10 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+                                <i data-feather="hard-drive" class="text-cyan-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 dark:text-white group-hover:text-primary transition">Data Recovery</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Professional data recovery solutions</p>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="team.html" class="hover:text-primary transition">Team</a>
+                <a href="case-studies.html" class="hover:text-primary transition">Case Studies</a>
+                <a href="blog.html" class="hover:text-primary transition">Blog</a>
+                <a href="resources.html" class="text-primary transition">Resources</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="hidden dark:block h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="block dark:hidden h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                </button>
+                <a href="consulting.html" class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium transition transform hover:scale-105">
+                    Let's Talk
+                </a>
+                <button id="mobile-menu-button" class="md:hidden p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-cyber-card shadow-lg">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="hover:text-primary transition">Home</a>
+                <div class="border-l-2 border-primary pl-4">
+                    <p class="font-semibold mb-2 text-primary">Services</p>
+                    <a href="wapt.html" class="block py-1 hover:text-primary transition">Web App Penetration Testing</a>
+                    <a href="vulnerability-assessment.html" class="block py-1 hover:text-primary transition">Vulnerability Assessment</a>
+                    <a href="security-consulting.html" class="block py-1 hover:text-primary transition">Security Consulting</a>
+                    <a href="auditing-compliance.html" class="block py-1 hover:text-primary transition">Auditing & Compliance</a>
+                    <a href="training-awareness.html" class="block py-1 hover:text-primary transition">Training / Awareness</a>
+                    <a href="data-recovery.html" class="block py-1 hover:text-primary transition">Data Recovery</a>
+                </div>
+                <a href="team.html" class="hover:text-primary transition">Team</a>
+                <a href="case-studies.html" class="hover:text-primary transition">Case Studies</a>
+                <a href="blog.html" class="hover:text-primary transition">Blog</a>
+                <a href="resources.html" class="text-primary transition">Resources</a>
+                <a href="consulting.html" class="bg-primary hover:bg-blue-600 text-white px-6 py-2 rounded-full font-medium text-center transition">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="py-16 md:py-24 bg-gray-100 dark:bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fadeInUp">
+                    Security <span class="text-primary">Resources</span>
+                </h1>
+                <p class="text-xl max-w-3xl mx-auto text-gray-600 dark:text-gray-400 animate-fadeInUp" style="animation-delay: 0.2s;">
+                    Educational content on vulnerabilities, attacks, and security best practices
+                </p>
+            </div>
+        </section>
+
+        <!-- Resources Grid -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <!-- Resource Card 1 -->
+                    <div class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden transition duration-300 card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Common Vulnerabilities</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                Learn about common security vulnerabilities, their potential impact, and recommended mitigation strategies to protect your systems.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-primary hover:underline">
+                                Read Guide
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Resource Card 2 -->
+                    <div class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden transition duration-300 card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Phishing Attack Prevention</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                Learn to identify and prevent phishing attacks. Discover how attackers target your organization and how to build effective defenses.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-primary hover:underline">
+                                Read Guide
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Resource Card 3 -->
+                    <div class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden transition duration-300 card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Zero Trust Architecture</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                Explore the principles of Zero Trust security models and learn how to implement this modern approach to secure your organization.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-primary hover:underline">
+                                Read Guide
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Resource Card 4 -->
+                    <div class="bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden transition duration-300 card-hover">
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold">Incident Response Playbook</h3>
+                            </div>
+                            <p class="text-gray-600 dark:text-gray-400 mb-6">
+                                Step-by-step procedures for handling security incidents. Learn how to prepare, identify, contain, eradicate, and recover from breaches.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-primary hover:underline">
+                                Read Guide
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Guidance CTA -->
+        <section class="py-16 bg-gray-100 dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto bg-white dark:bg-cyber-card rounded-xl shadow-md overflow-hidden">
+                    <div class="p-8 md:p-10">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4">Need personalized security guidance?</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">
+                            Connect with SecureShield today to help secure your organization with tailored cybersecurity solutions.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="consulting.html" class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition transform hover:scale-105">
+                                Schedule Consulting
+                            </a>
+                            <a href="contact.html" class="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-6 py-3 rounded-lg font-medium transition">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Resources -->
+        <section class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="text-2xl md:text-3xl font-bold mb-12 text-center">Additional Resources</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Whitepapers -->
+                    <div class="bg-white dark:bg-cyber-card rounded-xl shadow-md p-6 transition duration-300 card-hover">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-center">Whitepapers</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-center mb-4">
+                            In-depth research and analysis on emerging security threats and solutions
+                        </p>
+                        <div class="text-center">
+                            <a href="#" class="text-primary hover:underline">View All Whitepapers</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Webinars -->
+                    <div class="bg-white dark:bg-cyber-card rounded-xl shadow-md p-6 transition duration-300 card-hover">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-center">Webinars</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-center mb-4">
+                            Live and on-demand sessions with security experts on critical topics
+                        </p>
+                        <div class="text-center">
+                            <a href="#" class="text-primary hover:underline">View All Webinars</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Tools -->
+                    <div class="bg-white dark:bg-cyber-card rounded-xl shadow-md p-6 transition duration-300 card-hover">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-primary mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-center">Security Tools</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-center mb-4">
+                            Free assessment tools and utilities to evaluate your security posture
+                        </p>
+                        <div class="text-center">
+                            <a href="#" class="text-primary hover:underline">Access Tools</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="py-16 bg-gray-100 dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated on Security Trends</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">
+                        Subscribe to our newsletter to receive the latest security insights, threat intelligence, and best practices.
+                    </p>
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                        <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary">
+                        <button type="submit" class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition transform hover:scale-105">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="shield-icon.svg" class="text-primary w-6 h-6">
+                        <span class="text-xl font-bold">SecureShield</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Enterprise-grade cybersecurity solutions protecting organizations worldwide with cutting-edge threat intelligence and expert security services.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-primary transition">Home</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-primary transition">Our Team</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-primary transition">Penetration Testing</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-primary transition">Vulnerability Assessment</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-primary transition">Security Consulting</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-primary transition">Threat Intelligence</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="resources.html" class="text-gray-400 hover:text-primary transition">Security Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 SecureShield. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            feather.replace();
+        });
+
+        // Services Dropdown Click Behavior
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownTrigger = dropdown.querySelector('a');
+        const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+
+        // Toggle dropdown on click
+        dropdownTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Keep dropdown open when hovering over it
+        dropdownMenu.addEventListener('mouseenter', () => {
+            dropdown.classList.add('active');
+        });
+
+        // Close dropdown only when mouse leaves both trigger and menu
+        let leaveTimer;
+        dropdown.addEventListener('mouseleave', () => {
+            leaveTimer = setTimeout(() => {
+                dropdown.classList.remove('active');
+            }, 200);
+        });
+
+        dropdown.addEventListener('mouseenter', () => {
+            clearTimeout(leaveTimer);
+        });
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
